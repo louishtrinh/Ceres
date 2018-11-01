@@ -1,4 +1,13 @@
 .container-fluid{
-    width:  50%;
-    margin:auto;
+    margin: 0 auto;
+    width:100%;
+    
+
+}
+.img-fluid{
+    width:  60%;
     }
+
+#picks{
+    text-align: center;
+}
