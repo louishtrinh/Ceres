@@ -1,4 +1,4 @@
-# Foder: Local Foraging
+# Food Spotter: Local Foraging
 
 App developed to help neighbors share food. Help minimize food waste by sharing other foraging locations. 
 
