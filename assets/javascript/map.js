@@ -126,6 +126,13 @@ $("#addBtn").on("click", function(event) {
     .val()
     .trim();
 
+  $("#stNum-input").val("");
+  $("#stName-input").val("");
+  $("#city-input").val("");
+  $("#state-input").val("");
+  $("#fruit-input").val("");
+  $("#comment-input").val("");
+
   map.fullAddress =
     map.stNum + " " + map.stName + ", " + map.city + ", " + map.state;
 
