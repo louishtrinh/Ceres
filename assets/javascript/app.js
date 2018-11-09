@@ -39,6 +39,7 @@ function weather() {
     $("#weatherCond").text("Outdoor condition: " + weatherCondition);
   });
 }
+weather();
 
 var timezoneURL = "https://maps.googleapis.com/maps/api/timezone/json?location=37.3382,-121.8863&timestamp=1331161200&key=AIzaSyDA5pE6-JI4kSdYhzTn3qyAMzLYs_zITD8";
 
@@ -93,5 +94,4 @@ database.ref().on("child_added", function(childSnapshot) {
   $("#foraging-table > tbody").append(newRow);
 });
 
-weather();
 
