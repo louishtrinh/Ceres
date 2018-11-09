@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Food Map</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCUZawjJ2QTcuna_CVdB_d8Tv_RZS82VCU",
+            authDomain: "ceres-60140.firebaseapp.com",
+            databaseURL: "https://ceres-60140.firebaseio.com",
+            projectId: "ceres-60140",
+            storageBucket: "ceres-60140.appspot.com",
+            messagingSenderId: "75761398226"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        database = firebase.database();
+        var map;
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: { lat: 37.3272057, lng: -121.8878404 }
+            });
+        }
+
+
+        database.ref().on("child_added", function initMap(snapshot) {
+            /*             console.log(snapshot.val())
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 8,
+                            center: { lat: 37.2972057, lng: -121.9578404 }
+                        });
+                        var bounds = {
+                            north: 37.469415,
+                            south: 37.124834,
+                            east: -121.589900,
+                            west: -122.045877
+                        };
+            
+                        map.fitBounds(bounds); */
+
+
+
+            setTimeout(function () {
+                var contentString = '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    '</div>' +
+                    '<h3 id="firstHeading" class="firstHeading">' + snapshot.val().fruitType + '</h1>' +
+                    '<div id="bodyContent style="font-size:30px;">' +
+                    '<p><b>Address: </b>' + snapshot.val().address + '</p>' +
+                    '<p><b>Property Type: </b>' + snapshot.val().propertyType + '</p>' +
+                    "<p><b>Spotter's comment: </b>" + snapshot.val().comment + '</p>' +
+                    '</div>' +
+                    '</div>';
+
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                var marker = new google.maps.Marker({
+                    position: { lat: snapshot.val().lat, lng: snapshot.val().long },
+                    map: map,
+                    animation: google.maps.Animation.DROP
+                });
+                marker.addListener('click', function () {
+                    infowindow.open(map, marker);
+                });
+
+            }
+                , 200 * (Math.floor(Math.random() * Math.floor(5))));
+
+
+
+
+        })
+
+
+
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB22oBue48oqdkA7xqVGxoS0XYwj1UgOKI&callback=initMap">
+    </script>
+
+</body>
+
+</html>
