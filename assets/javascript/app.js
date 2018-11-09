@@ -20,7 +20,7 @@ $.ajax({
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     var nd = new Date(utc + (1000 * offset));
 
-    alert("The local time is " + nd.toLocaleString());
+    $("#time").append("Your local time is : " + nd.toLocaleString());
   }
 
   calcTime(-28800.0);
