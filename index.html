@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Foder - Local Foraging</title>
+    <title>Fruit Spotter - Local Foraging</title>
 
     <!-- ResetStyle -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -21,6 +21,18 @@
         crossorigin="anonymous">
     <!-- FontAwesome -->
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <!-- Google Fonts -->
+
+    <!-- Materialize CSS -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+    <!-- Materialize CSS -->
+
     <!-- MainCSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- MainCSS -->
@@ -31,66 +43,102 @@
 
     <header>
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="index.html">Foder</a>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" height="36px" alt="Fruit Spotter Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Available Locations <span class="sr-only">(current)</span></a>
+                    <li class="nav-link">
+                        Fruit Spotter
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="report.html">Report New Location</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
-                    </li>
+                    </li> -->
                 </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                <label style="color: white" id="time">
-                </label>
-                </form>
+                <span class="navbar-text">
+                    <label id="time">
+                    </label>
+                </span>
             </div>
         </nav>
+
     </header>
 
 
     <!-- Begin page content -->
-
+    
     <main role="main" class="container">
-        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-green rounded shadow-sm">
-            <div>
-                <h1>Foraging Locations</h1>
-            </div>
-
-        </div>
-
+            <div id="map"></div>
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h6 class="border-bottom border-gray pb-2 mb-0">San Jose, CA (95110, 95112, 95113)</h6>
+            <h6 class="border-bottom border-gray pb-2 mb-0">Weather</h6>
             <div class="media text-muted pt-3">
                 <div class="container-fluid">
-                    <img src="https://via.placeholder.com/150" class="img-fluid" alt="Responsive image">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked> +
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="option2" autocomplete="off"> -
-                        </label>
-                    </div>
-                    <p class="media-body pb-3 mb-0 small lh-125">
-                        <strong class="d-block text-gray-dark">Need a different location?</strong>
-                        Sign-up here to get notified when we have foraging locations in your area.
+                       <p class="media-body pb-3 mb-0 small lh-125" id="weatherTemp">
                     </p>
                 </div>
             </div>
         </div>
-
+        <!-- Add New Locations -->
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Available Foraging Locations (Top 3)</h6>
+                <h6 class="border-bottom border-gray pb-2 mb-0">Add New Location</h6>
+                <form>
+                        <div class="container-fluid">
+    
+                                <div class="row">
+                                    <!-- <div class="col-12">
+                                        <div class="card-header">Address Information</div>
+                                    </div> -->
+                                    <div class="col-12">
+                                        <input class="form-control" type="text" placeholder="Street#">
+                                    </div>
+                        
+                                    <div class="col-12">
+                                        <input class="form-control" type="text" placeholder="Street Name">
+                                    </div>
+                        
+                                    <div class="col-12">
+                                        <input class="form-control" type="text" placeholder="City/State">
+                                    </div>
+                        
+                                    <div class="col-12">
+                                        <input class="form-control" type="text" placeholder="Zip Code">
+                                    </div>
+                                </div>
+                                <br>
+                        
+                        
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Property Type</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected>Public</option>
+                                        <option value="1">Private</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Forage Find:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>         
+                </form>
+            </div>
+                <!-- <div class="d-flex justify-content-between align-items-center w-100">
+                        <a href="#" role="button" class="btn btn-secondary btn-lg btn-block">Cancel</a><br>
+                        <a href="#" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Add Location</a>
+                       
+                </div> -->
+            </div>
+
+        <!-- List of Locations -->
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom border-gray pb-2 mb-0">Available Foraging Locations</h6>
             <div class="media text-muted pt-3">
                 <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
                 <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -122,15 +170,14 @@
                 </div>
             </div>
             <div>
-            <small class="d-block text-right mt-3">
-                <a href="#">See more suggestions</a>
-            </small><br>
-            </div>
-            <div class="d-flex justify-content-between align-items-center w-100">
-                    <a href="report.html" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">Report New Location</a>
+                <small class="d-block text-right mt-3">
+                        Other text goes here<br>
 
+                </small><br>
             </div>
         </div>
+
+
     </main>
 
 
@@ -138,10 +185,9 @@
 
     <footer class="footer">
         <div class="container">
-            <span class="text-muted">Foder &copy; Copyright 2018 | <a href="sitemap.html">Sitemap</a> | <a href="privacy.html">Privacy Policy</a></span>
+            <span class="text-muted">Fruit Spotter &copy; Copyright 2018 | <a href="privacy.html">Privacy Policy</a></span>
         </div>
     </footer>
-
 
     <!-- Button trigger modal -->
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -154,7 +200,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Foder Disclaimer</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Fruit Spotter Disclaimer</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -172,7 +218,9 @@
 
 
 
-
+    <!-- GoogleMaps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKnMVEC8uBUUyAJhPXzKTsuYLYCWtULJ4&callback=initMap">
+    </script>
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
