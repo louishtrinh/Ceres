@@ -71,8 +71,8 @@
         <div class="my-3 p-3 bg-white rounded shadow-sm">
             <h6 class="border-bottom border-gray pb-2 mb-0">San Jose, CA (95110, 95112, 95113)</h6>
             <div class="media text-muted pt-3">
-                <div class="container-fluid">
-                    <img src="https://via.placeholder.com/150" class="img-fluid" alt="Responsive image">
+                <div id="mapHolder" class="container-fluid">
+                <iframe width="600" height="450" frameborder="0" style="border:0" src="./map.html" allowfullscreen></iframe>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-secondary active">
                             <input type="radio" name="options" id="option1" autocomplete="off" checked> +
@@ -171,7 +171,8 @@
     </div> -->
 
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB22oBue48oqdkA7xqVGxoS0XYwj1UgOKI&callback=initMap"
+        async defer></script>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
