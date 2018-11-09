@@ -21,7 +21,7 @@ $(document).ready(function(){
       
 
 function weather() {
-  var weatherURL = "http://api.openweathermap.org/data/2.5/weather?id=5392171&APPID=2a69d1f4ce8a367d123d72948f006681";
+  var weatherURL = "https://api.openweathermap.org/data/2.5/weather?id=5392171&APPID=2a69d1f4ce8a367d123d72948f006681";
 
   $.ajax({
     url: weatherURL,
@@ -35,8 +35,8 @@ function weather() {
     var weatherCondition = ((response.weather[0].description))
     console.log(weatherCondition);
     
-    $("#weatherTemp").text("Temperature: " + temp + "ºF");
-    $("#weatherCond").text("Outdoor condition: " + weatherCondition);
+    $("#weatherTemp").append("Temperature: " + temp + "ºF");
+    $("#weatherCond").append("Outdoor condition: " + weatherCondition);
   });
 }
 weather();
