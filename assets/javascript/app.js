@@ -39,6 +39,7 @@ function weather() {
     $("#weatherCond").text("Outdoor condition: " + weatherCondition);
   });
 }
+weather();
 
 var timezoneURL = "https://maps.googleapis.com/maps/api/timezone/json?location=37.3382,-121.8863&timestamp=1331161200&key=AIzaSyDA5pE6-JI4kSdYhzTn3qyAMzLYs_zITD8";
 
@@ -58,4 +59,39 @@ $.ajax({
 
   calcTime(-28800.0);
 });
+
+var database = firebase.database();
+
+
+
+
+// 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+    // Store everything into a variable.
+    var address = childSnapshot.val().address;
+    var fruitType = childSnapshot.val().fruitType;
+    var propertyType = childSnapshot.val().propertyType;
+
+
+  
+    // input Info
+    console.log(address);
+    console.log(fruitType);
+    console.log(propertyType);
+
+
+     // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(fruitType),
+    $("<td>").text(propertyType),
+    $("<td>").text(address)
+  
+  );
+
+//   Append the new row to the table
+  $("#foraging-table > tbody").append(newRow);
+});
+
 
