@@ -33,3 +33,10 @@
 }
 
 .text-white-50 { color: rgba(255, 255, 255, .75); }
+
+thead {
+    vertical-align: middle;
+    border:1px;
+    border-color: inherit;
+    width: 20%;
+}

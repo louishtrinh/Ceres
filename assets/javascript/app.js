@@ -26,4 +26,35 @@ $.ajax({
   calcTime(-28800.0);
 });
 
+var database = firebase.database();
 
+
+
+// 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
+database.ref().on("child_added", function(childSnapshot) {
+    console.log(childSnapshot.val());
+
+    // Store everything into a variable.
+    var address = childSnapshot.val().address;
+    var fruitType = childSnapshot.val().fruitType;
+    var propertyType = childSnapshot.val().propertyType;
+
+
+  
+    // input Info
+    console.log(address);
+    console.log(fruitType);
+    console.log(propertyType);
+
+
+     // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(address),
+    $("<td>").text(fruitType),
+    $("<td>").text(propertyType)
+  
+  );
+
+//   Append the new row to the table
+  $("#foraging-table > tbody").append(newRow);
+});
