@@ -63,6 +63,7 @@ var database = firebase.database();
 
 
 
+
 // 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot) {
     console.log(childSnapshot.val());
@@ -93,3 +94,4 @@ database.ref().on("child_added", function(childSnapshot) {
 });
 
 weather();
+

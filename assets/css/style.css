@@ -24,11 +24,13 @@
 
 .text-white-50 { color: rgba(255, 255, 255, .75); } */
 
+
 thead {
     vertical-align: middle;
     border:1px;
     border-color: inherit;
     width: 20%;
+
 }
 nav ul a,
 nav .brand-logo {
@@ -79,3 +81,4 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
