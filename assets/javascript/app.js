@@ -49,12 +49,14 @@ $.ajax({
 }).then(function (response) {
   console.log(response);
 
-  function calcTime(offset) {
-    var d = new Date();
-    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-    var nd = new Date(utc + (1000 * offset));
+//calculating from 1/1/1970 UTC
 
-    $("#time").append("Date: " + nd.toLocaleString().replace(/,/g, ' & Local Time: '));
+  function calcTime(offset) {
+    var d = new Date(); // to get user computer time
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000); // to get the seconds diff between time now and UTC
+    var nd = new Date(utc + (1000 * offset)); //rawoffset = -28800
+
+    $("#time").append("Date: " + nd.toLocaleString().replace(/,/, ' & Local Time: '));
   }
 
   calcTime(-28800.0);
