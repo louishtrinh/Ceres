@@ -45,14 +45,14 @@
         <!-- Fixed navbar -->
         <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="index.html" class="brand-logo"><img src="assets/images/logoname.png" height="24px"
-                        alt="Fruit Spotter Logo"></a>
+                <a id="logo-container" href="index.html" class="brand-logo"><img src="assets/images/logoname.png"
+                        height="24px" alt="Fruit Spotter Logo"></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="index.html">Forage</a></li>
                     <li><a href="info.html">Info</a></li>
                 </ul>
                 <ul id="nav-mobile" class="sidenav">
-                        <li><a href="index.html">Forage</a></li>
+                    <li><a href="index.html">Forage</a></li>
                     <li><a href="info.html">Info</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -102,25 +102,25 @@
                         <div class="row">
                             <form class="col s12">
                                 <div class="row">
-                                    <div class="input-field col s3">
+                                    <div class="input-field col s12 m3">
                                         <input placeholder="Street No." id="stNum-input" type="number" class="validate"
                                             required>
                                     </div>
-                                    <div class="input-field col s9">
+                                    <div class="input-field col s12 m9">
                                         <input placeholder="Street Name" id="stName-input" type="text" class="validate"
                                             required>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field col s5">
+                                    <div class="input-field col s12 m5">
                                         <input id="city-input" class="form-control" type="text" placeholder="City"
                                             required>
                                     </div>
-                                    <div class="input-field col s4">
+                                    <div class="input-field col s12 m4">
                                         <input id="state-input" class="form-control" type="text" placeholder="State"
                                             required>
                                     </div>
-                                    <div class="input-field col s3">
+                                    <div class="input-field col s12 m3">
                                         <select class="browser-default" id="property-input">
                                             <option selected>Public</option>
                                             <option value="Private">Private</option>
@@ -128,15 +128,15 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="input-field col s6">
-                                            <label for="fruit-input">Fruit Discovered:</label>
-                                            <textarea class="materialize-textarea" id="fruit-input"></textarea>
+                                    <div class="input-field col s12 m6">
+                                        <label for="fruit-input">Fruit Discovered:</label>
+                                        <textarea class="materialize-textarea" id="fruit-input"></textarea>
                                     </div>
-                                <!-- </div> -->
-                                <!-- <div class="row"> -->
-                                    <div class="input-field col s6">
-                                            <label for="textarea1">Comments:</label>
-                                            <textarea id="comment-input" class="materialize-textarea"></textarea>
+                                    <!-- </div> -->
+                                    <!-- <div class="row"> -->
+                                    <div class="input-field col s12 m6">
+                                        <label for="textarea1">Comments:</label>
+                                        <textarea id="comment-input" class="materialize-textarea"></textarea>
                                     </div>
                                 </div>
                                 <button class="btn waves-effect waves-light" type="submit" name="action" id="addBtn"
@@ -171,47 +171,178 @@
         </div>
         </div>
 
-
-  <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn view" onclick="$('#modal1').modal('open');">Test Modal</a>
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Privacy Policy</h4>
-      <p>Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. Grape wattle seed kombu beetroot horseradish carrot squash brussels sprout chard.</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-  
-
     </main>
 
 
     <footer class="page-footer grey darken-3">
-            <div class="container">
-                    <div class="row">
-                      <div class="col l8 s12">
-                        <h5 class="white-text">Project #1</h5>
-                        <p class="grey-text text-lighten-4"><a href="#modal1">Read our Privacy Policy</a></p>
-                      </div>
-                      <div class="col l4 s12">
-                            <h5 class="white-text">Fruit Spotter </h5>
-                            <ul>
-                              <li><a class="white-text" href="#!">Follow @MaxH</a></li>
-                              <li><a class="white-text" href="#!">Follow @bogelex</a></li>
-                              <li><a class="white-text" href="#!">Follow @Louis</a></li>
-                              <li><a class="white-text" href="#!">Follow @gb</a></li>
-                            </ul>
-                          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col l8 s12">
+                    <h5 class="white-text">Project #1</h5>
+                    <!-- Modal Trigger -->
+                    <a href="#modal1" class="modal-trigger" data-target="modal1">Privacy Policy</a><br>
+                    <br><p>Locations marked on this map may or may not be available. Forage at your own risk.</p>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal modal-fixed-footer">
+                        <div class="modal-content">
+                            <h4>Privacy Policy</h4>
+                            <p>Created for Demonstration Purposes</p>
+                            <p><strong>UCB Online Students: KSJ, LHT, MH & GB built the Foder app as a
+                                    Free app. <br>This SERVICE is provided by UCB Online Students: KSJ, LHT, MH & GB at
+                                    no cost and
+                                    is intended for use as is. Use at your own risk!</strong></p>
+                            <p>UCB Online Students: KSJ, LHT, MH & GB, for the purposes of this document, will be
+                                referred to as a single person.<br><br>
+                                This page is used to inform visitors regarding my policies with the collection, use,
+                                and
+                                disclosure of Personal Information if anyone decided to use my Service.<br><br>
+                                If you choose to use my Service, then you agree to the collection and use of
+                                information in
+                                relation to this policy. The Personal Information that I collect is used for providing
+                                and
+                                improving the Service. I will not use or share your information with anyone except as
+                                described
+                                in this Privacy Policy.<br><br>
+                                The terms used in this Privacy Policy have the same meanings as in our Terms and
+                                Conditions,
+                                which is accessible at Foder unless otherwise defined in this Privacy Policy.<br><br>
+                                **Information Collection and Use**
+                                <br><br>
+                                For a better experience, while using our Service, I may require you to provide us with
+                                certain
+                                personally identifiable information, including but not limited to Address of Private or
+                                Public
+                                properties, Identifying plants, trees, shrubs, etc.. The information that I request
+                                will be
+                                retained on your device and is not collected by me in any way.
+                                <br><br>
+                                The app does use third party services that may collect information used to identify
+                                you.
+                                <br><br>
+                                **Log Data**
+                                <br><br>
+                                I want to inform you that whenever you use my Service, in a case of an error in the app
+                                I
+                                collect data and information (through third party products) on your phone called Log
+                                Data. This
+                                Log Data may include information such as your device Internet Protocol (“IP”) address,
+                                device
+                                name, operating system version, the configuration of the app when utilizing my Service,
+                                the
+                                time and date of your use of the Service, and other statistics.
+                                <br><br>
+                                **Cookies**
+                                <br><br>
+                                Cookies are files with a small amount of data that are commonly used as anonymous
+                                unique
+                                identifiers. These are sent to your browser from the websites that you visit and are
+                                stored on
+                                your device's internal memory.
+                                <br><br>
+                                This Service does not use these “cookies” explicitly. However, the app may use third
+                                party code
+                                and libraries that use “cookies” to collect information and improve their services. You
+                                have
+                                the option to either accept or refuse these cookies and know when a cookie is being
+                                sent to
+                                your device. If you choose to refuse our cookies, you may not be able to use some
+                                portions of
+                                this Service.
+                                <br><br>
+                                **Service Providers**
+                                <br><br>
+                                I may employ third-party companies and individuals due to the following reasons:
+                                <br><br>
+                                * To facilitate our Service;
+                                * To provide the Service on our behalf;
+                                * To perform Service-related services; or
+                                * To assist us in analyzing how our Service is used.
+                                <br><br>
+                                I want to inform users of this Service that these third parties have access to your
+                                Personal
+                                Information. The reason is to perform the tasks assigned to them on our behalf.
+                                However, they
+                                are obligated not to disclose or use the information for any other purpose.
+                                <br><br>
+                                **Security**
+                                <br><br>
+                                I value your trust in providing us your Personal Information, thus we are striving to
+                                use
+                                commercially acceptable means of protecting it. But remember that no method of
+                                transmission
+                                over the internet, or method of electronic storage is 100% secure and reliable, and I
+                                cannot
+                                guarantee its absolute security.
+                                <br><br>
+                                **Links to Other Sites**
+                                <br><br>
+                                This Service may contain links to other sites. If you click on a third-party link, you
+                                will be
+                                directed to that site. Note that these external sites are not operated by me.
+                                Therefore, I
+                                strongly advise you to review the Privacy Policy of these websites. I have no control
+                                over and
+                                assume no responsibility for the content, privacy policies, or practices of any
+                                third-party
+                                sites or services.
+                                <br><br>
+                                **Children’s Privacy**
+                                <br><br>
+                                These Services do not address anyone under the age of 13. I do not knowingly collect
+                                personally identifiable information from children under 13. In the case I discover that
+                                a
+                                child under 13 has provided me with personal information, I immediately delete this
+                                from our
+                                servers. If you are a parent or guardian and you are aware that your child has provided
+                                us with
+                                personal information, please contact me so that I will be able to do necessary actions.
+                                <br><br>
+                                **Changes to This Privacy Policy**
+                                <br><br>
+                                I may update our Privacy Policy from time to time. Thus, you are advised to review this
+                                page
+                                periodically for any changes. I will notify you of any changes by posting the new
+                                Privacy
+                                Policy on this page. These changes are effective immediately after they are posted on
+                                this
+                                page.
+                                <br><br>
+                                **Contact Us**
+                                <br><br>
+                                If you have any questions or suggestions about my Privacy Policy, do not hesitate to
+                                contact
+                                us (Follow us links on footer).
+                                <br></p>
+
+                                <p>Link to privacy policy of third party service providers used by the app
+                                        <br><a href="https://www.google.com/policies/privacy/" target="_blank">Google Services</a><br>
+                                        <a href="https://firebase.google.com/policies/analytics" target="_blank">Firebase Analytics</a></p>
+                                
+                                <p>This privacy policy page was created at
+                                    <a href="https://privacypolicytemplate.net" target="_blank">privacypolicytemplate.net</a> and modified/generated by <a href="https://app-privacy-policy-generator.firebaseapp.com/" target="_blank">App
+                                        Privacy Policy Generator</a></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
                     </div>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Fruit Spotter </h5>
+                    <ul id="groupInfo">
+                        <li><a class="white-text" href="https://github.com/bb19930615" target="_blank">Follow @MaxH</a></li>
+                        <li><a class="white-text" href="https://github.com/Bogelex" target="_blank">Follow @bogelex</a></li>
+                        <li><a class="white-text" href="https://github.com/louishtrinh" target="_blank">Follow @Louis</a></li>
+                        <li><a class="white-text" href="https://gbanares.github.io/gbanares" target="_blank">Follow @gb</a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
         <div class="footer-copyright">
             <div class="container">
                 <span class="text-muted">&copy; Copyright 2018 </span>
-                
-                
+
+
             </div>
 
         </div>

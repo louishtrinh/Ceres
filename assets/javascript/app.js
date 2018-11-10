@@ -53,7 +53,7 @@ $.ajax({
 
   function calcTime(offset) {
     var d = new Date(); // to get user computer time
-    var utc = d.getTime() + (d.getTimezoneOffset() * 60000); // to get the minutes diff between time now and UTC
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000); // to get the seconds diff between time now and UTC
     var nd = new Date(utc + (1000 * offset)); //rawoffset = -28800
 
     $("#time").append("Date: " + nd.toLocaleString().replace(/,/, ' & Local Time: '));
