@@ -27,13 +27,13 @@ function weather() {
     url: weatherURL,
     method: "GET"
   }).then(function (response) {
-    console.log(response)
+    // console.log(response)
     var temp = ((response.main.temp-273.15)*1.8)+32;
     temp = temp.toFixed(1);
-    console.log(temp);
+    // console.log(temp);
 
     var weatherCondition = ((response.weather[0].description))
-    console.log(weatherCondition);
+    // console.log(weatherCondition);
     
     $("#weatherTemp").append("Temperature: " + temp + "ºF");
     $("#weatherCond").append("Outdoor condition: " + weatherCondition);
@@ -69,7 +69,7 @@ var database = firebase.database();
 
 // 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot) {
-    console.log(childSnapshot.val());
+    // console.log(childSnapshot.val());
 
     // Store everything into a variable.
     var address = childSnapshot.val().address;
@@ -79,9 +79,9 @@ database.ref().on("child_added", function(childSnapshot) {
 
   
     // input Info
-    console.log(address);
-    console.log(fruitType);
-    console.log(propertyType);
+    // console.log(address);
+    // console.log(fruitType);
+    // console.log(propertyType);
 
 
      // Create the new row

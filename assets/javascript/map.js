@@ -18,21 +18,21 @@ map = {
       "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
       map.latLong +
       map.api;
-    console.log("HTML5 Geolocation detecting address from:");
-    console.log(queryURL);
-    console.log("-----------");
+    // console.log("HTML5 Geolocation detecting address from:");
+    // console.log(queryURL);
+    // console.log("-----------");
 
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log("Location Info:");
-      console.log(response);
-      console.log(response.results[0].address_components[0].long_name);
-      console.log(response.results[0].address_components[1].long_name);
-      console.log(response.results[0].address_components[2].long_name);
-      console.log(response.results[0].address_components[5].short_name);
-      console.log("-----------");
+      // console.log("Location Info:");
+      // console.log(response);
+      // console.log(response.results[0].address_components[0].long_name);
+      // console.log(response.results[0].address_components[1].long_name);
+      // console.log(response.results[0].address_components[2].long_name);
+      // console.log(response.results[0].address_components[5].short_name);
+      // console.log("-----------");
 
       $("#stNum-input").val(
         response.results[0].address_components[0].long_name
@@ -59,17 +59,17 @@ map = {
       "+" +
       map.api;
 
-    console.log("Pulling LongLat for Firebase from:");
-    console.log(queryURL);
+    // console.log("Pulling LongLat for Firebase from:");
+    // console.log(queryURL);
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log("lat and Long");
+      // console.log("lat and Long");
       map.lat = response.results[0].geometry.location.lat;
       map.long = response.results[0].geometry.location.lng;
-      console.log(map.lat);
-      console.log(map.long);
+      // console.log(map.lat);
+      // console.log(map.long);
 
       database.ref().push({
         address: map.fullAddress,
@@ -136,10 +136,10 @@ $("#addBtn").on("click", function(event) {
   map.fullAddress =
     map.stNum + " " + map.stName + ", " + map.city + ", " + map.state;
 
-  console.log(map.fullAddress);
-  console.log(map.property);
-  console.log(map.fruit);
-  console.log(map.comment);
+  // console.log(map.fullAddress);
+  // console.log(map.property);
+  // console.log(map.fruit);
+  // console.log(map.comment);
 
   map.pushToFireBase();
 });
