@@ -1,24 +1,24 @@
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, options);
+});
 
-  // document.addEventListener('DOMContentLoaded', function() {
-  //   var elems = document.querySelectorAll('select');
-  //   var instances = M.FormSelect.init(elems, options);
-  // });
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('select');
+//   var instances = M.FormSelect.init(elems, options);
+// });
 
-  // Or with jQuery
+// Or with jQuery
 
-  
-         
-$(document).ready(function(){
+
+
+$(document).ready(function () {
   $("select").formSelect();
 });
 
 
-      
+
 
 function weather() {
   var weatherURL = "https://api.openweathermap.org/data/2.5/weather?id=5392171&APPID=2a69d1f4ce8a367d123d72948f006681";
@@ -27,25 +27,14 @@ function weather() {
     url: weatherURL,
     method: "GET"
   }).then(function (response) {
-<<<<<<< HEAD
-    // console.log(response)
-    var temp = ((response.main.temp-273.15)*1.8)+32;
-    temp = temp.toFixed(1);
-    // console.log(temp);
-
-    var weatherCondition = ((response.weather[0].description))
-    // console.log(weatherCondition);
-    
-=======
 /*     console.log(response)
- */    var temp = ((response.main.temp-273.15)*1.8)+32;
+ */    var temp = ((response.main.temp - 273.15) * 1.8) + 32;
     temp = temp.toFixed(1);
-/*     console.log(temp);
- */
+    /*     console.log(temp);
+     */
     var weatherCondition = ((response.weather[0].description))
-/*     console.log(weatherCondition);
- */    
->>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
+    /*     console.log(weatherCondition);
+     */
     $("#weatherTemp").append("Temperature: " + temp + "ºF");
     $("#weatherCond").append("Outdoor condition: " + weatherCondition);
   });
@@ -58,9 +47,9 @@ $.ajax({
   url: timezoneURL,
   method: "GET"
 }).then(function (response) {
-/*   console.log(response);
- */
-//calculating from 1/1/1970 UTC
+  /*   console.log(response);
+   */
+  //calculating from 1/1/1970 UTC
 
   function calcTime(offset) {
     var d = new Date(); // to get user computer time
@@ -79,42 +68,31 @@ var database = firebase.database();
 
 
 // 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
-database.ref().on("child_added", function(childSnapshot) {
-<<<<<<< HEAD
-    // console.log(childSnapshot.val());
-
-=======
-/*     console.log(childSnapshot.val());
- */
->>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
-    // Store everything into a variable.
-    var address = childSnapshot.val().address;
-    var fruitType = childSnapshot.val().fruitType;
-    var propertyType = childSnapshot.val().propertyType;
+database.ref().on("child_added", function (childSnapshot) {
+  /*     console.log(childSnapshot.val());
+   */
+  // Store everything into a variable.
+  var address = childSnapshot.val().address;
+  var fruitType = childSnapshot.val().fruitType;
+  var propertyType = childSnapshot.val().propertyType;
 
 
-  
-    // input Info
-<<<<<<< HEAD
-    // console.log(address);
-    // console.log(fruitType);
-    // console.log(propertyType);
-=======
-/*     console.log(address);
-    console.log(fruitType);
-    console.log(propertyType); */
->>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
+
+  // input Info
+  /*     console.log(address);
+      console.log(fruitType);
+      console.log(propertyType); */
 
 
-     // Create the new row
+  // Create the new row
   var newRow = $("<tr>").append(
     $("<td>").text(fruitType),
     $("<td>").text(propertyType),
     $("<td>").text(address)
-  
+
   );
 
-//   Append the new row to the table
+  //   Append the new row to the table
   $("#foraging-table > tbody").append(newRow);
 });
 
