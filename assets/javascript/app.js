@@ -27,6 +27,7 @@ function weather() {
     url: weatherURL,
     method: "GET"
   }).then(function (response) {
+<<<<<<< HEAD
     // console.log(response)
     var temp = ((response.main.temp-273.15)*1.8)+32;
     temp = temp.toFixed(1);
@@ -35,6 +36,16 @@ function weather() {
     var weatherCondition = ((response.weather[0].description))
     // console.log(weatherCondition);
     
+=======
+/*     console.log(response)
+ */    var temp = ((response.main.temp-273.15)*1.8)+32;
+    temp = temp.toFixed(1);
+/*     console.log(temp);
+ */
+    var weatherCondition = ((response.weather[0].description))
+/*     console.log(weatherCondition);
+ */    
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
     $("#weatherTemp").append("Temperature: " + temp + "ºF");
     $("#weatherCond").append("Outdoor condition: " + weatherCondition);
   });
@@ -47,8 +58,8 @@ $.ajax({
   url: timezoneURL,
   method: "GET"
 }).then(function (response) {
-  console.log(response);
-
+/*   console.log(response);
+ */
 //calculating from 1/1/1970 UTC
 
   function calcTime(offset) {
@@ -69,8 +80,13 @@ var database = firebase.database();
 
 // 3. Create Firebase event for adding new information to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot) {
+<<<<<<< HEAD
     // console.log(childSnapshot.val());
 
+=======
+/*     console.log(childSnapshot.val());
+ */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
     // Store everything into a variable.
     var address = childSnapshot.val().address;
     var fruitType = childSnapshot.val().fruitType;
@@ -79,9 +95,15 @@ database.ref().on("child_added", function(childSnapshot) {
 
   
     // input Info
+<<<<<<< HEAD
     // console.log(address);
     // console.log(fruitType);
     // console.log(propertyType);
+=======
+/*     console.log(address);
+    console.log(fruitType);
+    console.log(propertyType); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
 
 
      // Create the new row

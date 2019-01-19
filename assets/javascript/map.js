@@ -18,14 +18,21 @@ map = {
       "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
       map.latLong +
       map.api;
+<<<<<<< HEAD
     // console.log("HTML5 Geolocation detecting address from:");
     // console.log(queryURL);
     // console.log("-----------");
+=======
+/*     console.log("HTML5 Geolocation detecting address from:");
+    console.log(queryURL);
+    console.log("-----------"); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
 
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+<<<<<<< HEAD
       // console.log("Location Info:");
       // console.log(response);
       // console.log(response.results[0].address_components[0].long_name);
@@ -33,6 +40,15 @@ map = {
       // console.log(response.results[0].address_components[2].long_name);
       // console.log(response.results[0].address_components[5].short_name);
       // console.log("-----------");
+=======
+/*       console.log("Location Info:");
+      console.log(response);
+      console.log(response.results[0].address_components[0].long_name);
+      console.log(response.results[0].address_components[1].long_name);
+      console.log(response.results[0].address_components[2].long_name);
+      console.log(response.results[0].address_components[5].short_name);
+      console.log("-----------"); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
 
       $("#stNum-input").val(
         response.results[0].address_components[0].long_name
@@ -59,17 +75,30 @@ map = {
       "+" +
       map.api;
 
+<<<<<<< HEAD
     // console.log("Pulling LongLat for Firebase from:");
     // console.log(queryURL);
+=======
+/*     console.log("Pulling LongLat for Firebase from:");
+    console.log(queryURL); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+<<<<<<< HEAD
       // console.log("lat and Long");
       map.lat = response.results[0].geometry.location.lat;
       map.long = response.results[0].geometry.location.lng;
       // console.log(map.lat);
       // console.log(map.long);
+=======
+/*       console.log("lat and Long"); */
+      map.lat = response.results[0].geometry.location.lat;
+      map.long = response.results[0].geometry.location.lng;
+/*       console.log(map.lat);
+      console.log(map.long); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
 
       database.ref().push({
         address: map.fullAddress,
@@ -136,10 +165,17 @@ $("#addBtn").on("click", function(event) {
   map.fullAddress =
     map.stNum + " " + map.stName + ", " + map.city + ", " + map.state;
 
+<<<<<<< HEAD
   // console.log(map.fullAddress);
   // console.log(map.property);
   // console.log(map.fruit);
   // console.log(map.comment);
+=======
+/*   console.log(map.fullAddress);
+  console.log(map.property);
+  console.log(map.fruit);
+  console.log(map.comment); */
+>>>>>>> f2571c4d9ebc72c1d89dc1c908544ed1883d12c0
 
   map.pushToFireBase();
 });
